@@ -7,8 +7,8 @@ pygame.init()
 
 cell_size = 10  # Size of each grid cell
 
-width = 500
-height = 500
+width = 800
+height = 800
 
 # determines the density of the grid (higher = less dense)
 resolution = 10
@@ -18,6 +18,13 @@ rows = height // resolution
 
 screen = pygame.display.set_mode((width, height))
 pygame.display.set_caption("John Conway's Game of Life")
+
+'''
+TODO: make a start menu with options to choose from such as
+- select the resolution.
+- set the screen size.
+- allow the ability to change the speed on the fly.
+'''
 
 def main():
     grid = createGrid(cols, rows)
