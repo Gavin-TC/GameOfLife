@@ -43,8 +43,8 @@ def main():
             
             if event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_SPACE:
-                    print(paused)
                     paused = not paused
+                
                 if event.key == pygame.K_BACKSPACE:
                     for x in range(len(grid)):
                         for y in range(len(grid[0])):
@@ -91,9 +91,10 @@ def main():
         # draw the grid lines
         if draw_grid:
             for x in range(0, width, resolution):
-                pygame.draw.line(screen, (50, 50, 50), (x, 0), (x, height))
-            for y in range(0, height, resolution):
-                pygame.draw.line(screen, (50, 50, 50), (0, y), (width, y))
+                for y in range(0, height, resolution):
+                    pygame.draw.line(screen, (50, 50, 50), (x, 0), (x, height))
+
+                    pygame.draw.line(screen, (50, 50, 50), (0, y), (width, y))
         
         # compute
         if not paused:
@@ -108,7 +109,6 @@ def main():
                         next_grid[x][y] = 0;
                     else:
                         next_grid[x][y] = state
-            #time.sleep(0.05)
                         
             grid = next_grid
                      
@@ -142,31 +142,3 @@ def createGrid(cols, rows, addRandom = False):
     return grid
 
 main()
-
-
-'''
-if prev_grid[y][x] == 0:
-    neighbors = checkNeighbors(prev_grid, x, y)
-    if neighbors == 3:
-        next_grid[y][x] = 1
-                    
-if prev_grid[y][x] == 1:
-    neighbors = checkNeighbors(prev_grid, x, y)
-    
-    if y == 5 and x == 5:
-        print(neighbors)
-    
-    if neighbors < 2:
-        next_grid[y][x] = 0
-    elif neighbors == 2 or neighbors == 3:
-        next_grid[y][x] = prev_grid[y][x]
-    elif neighbors > 3:
-        next_grid[y][x] = 0
-    
-    for dirX in [-1, 0, 1]:
-        for dirY in [-1, 0, 1]:
-            col = (x + dirX + cols) % cols
-            row = (y + dirY + rows) % rows
-            if next_grid[row][col] != 1:
-                next_grid[row][col] = 3
-'''
