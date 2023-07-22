@@ -104,9 +104,9 @@ def main():
                     neighbors = checkNeighbors(grid, x, y)
                     
                     if state == 0 and neighbors == 3:
-                        next_grid[x][y] = 1;
+                        next_grid[x][y] = 1
                     elif state == 1 and neighbors < 2 or neighbors > 3:
-                        next_grid[x][y] = 0;
+                        next_grid[x][y] = 0
                     else:
                         next_grid[x][y] = state
                         
@@ -141,4 +141,8 @@ def createGrid(cols, rows, addRandom = False):
     
     return grid
 
+<<<<<<< HEAD
 main()
+=======
+main()
+>>>>>>> 2fb96d5165a1bb5c908af618c6b1aa97b1c62cad
