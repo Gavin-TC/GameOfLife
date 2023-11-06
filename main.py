@@ -141,8 +141,4 @@ def createGrid(cols, rows, addRandom = False):
     
     return grid
 
-<<<<<<< HEAD
 main()
-=======
-main()
->>>>>>> 2fb96d5165a1bb5c908af618c6b1aa97b1c62cad
